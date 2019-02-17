@@ -3,9 +3,7 @@
         <!-- wwManager:start -->
         <wwSectionEditMenu v-bind:sectionCtrl="sectionCtrl"></wwSectionEditMenu>
         <!-- wwManager:end -->
-
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
-
         <div class="container section-padding">
             <div class="row">
                 <div class="title-container">
@@ -17,7 +15,6 @@
                     </h2>
                 </div>
             </div>
-
             <div>
                 <div class="row block-container" :class="{'one-block': section.data.blocks.length === 1}" v-for="(block, index) in section.data.blocks" :key="block.uniqueId">
                     <!-- wwManager:start -->
@@ -25,14 +22,12 @@
                         <i class="wwi wwi-delete" aria-hidden="true"></i>
                     </div>
                     <!-- wwManager:end -->
-
-                    <div class="block-img-container block" :class="{'left col-sm-offset-1 col-md-offset-1': index % 2 === 0, 'right col-sm-push-6 col-md-push-6': index % 2 === 1}">
+                    <div class="block-img-container block" :class="{'left': index % 2 === 0, 'right': index % 2 === 1}">
                         <div class="block-img">
                             <wwObject v-bind:ww-object="block.img"></wwObject>
                         </div>
                     </div>
-
-                    <div class="block-content-container block" :class="{'left col-sm-offset-1 col-md-offset-1': index % 2 === 1, 'right col-sm-pull-5 col-md-pull-5': index % 2 === 1}">
+                    <div class="block-content-container block" :class="{'left': index % 2 === 1, 'right': index % 2 === 1}">
                         <wwObject class="block-title" v-bind:ww-object="block.title"></wwObject>
                         <wwObject class="block-text" v-bind:ww-object="block.text"></wwObject>
                         <wwObject class="block-text" v-bind:ww-object="block.text2"></wwObject>
@@ -41,9 +36,7 @@
                             <wwObject class="button-wrapper" v-bind:ww-object="block.button"></wwObject>
                         </div>
                     </div>
-
                 </div>
-
                 <!-- wwManager:start -->
                 <div class="row block-add-btn-container" v-show="editMode">
                     <wwLayoutPlus @click="add(section.data.blocks, getNewBlock())"></wwLayoutPlus>
@@ -56,7 +49,7 @@
 
 <script>
 export default {
-    name: "duo_C",
+    name: "__COMPONENT_NAME__",
     props: {
         sectionCtrl: Object
     },
